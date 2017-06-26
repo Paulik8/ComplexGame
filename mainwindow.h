@@ -19,7 +19,6 @@ public:
     ~MainWindow();
 
 private slots:
-    void readResults();
 
     void on_action_4_triggered();
 
@@ -27,13 +26,7 @@ private slots:
 
     void on_action_3_triggered();
 
-    void on_action_triggered();
-
-    void on_action_2_triggered();
-
     void on_Game1_clicked();
-
-    void on_Game2_clicked();
 
     void on_Game3_clicked();
 

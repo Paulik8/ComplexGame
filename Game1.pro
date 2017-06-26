@@ -24,37 +24,38 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 
 SOURCES += \
-        main.cpp \
-        mainwindow.cpp \
-        tetrixboard.cpp \
-        tetrixpiece.cpp \
-        tetrixwindow.cpp \
-    strikeboard.cpp \
-    strikewindow.cpp \
-    widget.cpp \
-    snake.cpp \
-    move.cpp \
-    PPwindow.cpp
+    main.cpp \
+    mainwindow.cpp \
+    Tetris/tetrixboard.cpp \
+    Tetris/tetrixpiece.cpp \
+    Tetris/tetrixwindow.cpp \
+    Snake/widget.cpp \
+    Snake/snake.cpp \
+    main.cpp \
+    mainwindow.cpp \
+    PingPong/move.cpp \
+    PingPong/PPwindow.cpp
 
 
 
 HEADERS += \
-         tetrixboard.h \
-         tetrixpiece.h \
-         tetrixwindow.h \
-         mainwindow.h \
-    strikeboard.h \
-    strikewindow.h \
-    snake.h \
-    widget.h \
-    move.h \
-    PPwindow.h
+    Tetris/tetrixboard.h \
+    Tetris/tetrixpiece.h \
+    Tetris/tetrixwindow.h \
+    mainwindow.h \
+    PingPong/move.h \
+    PingPong/PPwindow.h \
+    Snake/snake.h \
+    Snake/widget.h
 
 FORMS += \
-        mainwindow.ui \
-    widget.ui \
-    PPwindow.ui
+    mainwindow.ui \
+    PingPong/PPwindow.ui \
+    Snake/widget.ui
 
 # install
 target.path = $$[QT_INSTALL_EXAMPLES]/widgets/widgets/tetrix
 INSTALLS += target
+
+SUBDIRS += \
+    Tetris/tetrix.pro
