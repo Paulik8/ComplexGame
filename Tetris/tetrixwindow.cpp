@@ -53,6 +53,8 @@ TetrixWindow::TetrixWindow() {
   setLayout(layout);
 
   setWindowTitle(tr("Тетрис"));
+
+  // задаем размеры окна
   resize(550, 370);
 }
 

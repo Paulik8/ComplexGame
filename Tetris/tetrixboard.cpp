@@ -166,7 +166,7 @@ void TetrixBoard::pieceDropped(int dropHeight) {
     emit levelChanged(level);
   }
 
-  score += dropHeight + 7;
+  score += dropHeight + 7; // за каждый уровень высоты +1 очко
   emit scoreChanged(score);
   removeFullLines();
 
@@ -200,7 +200,7 @@ void TetrixBoard::removeFullLines() {
 
   if (numFullLines > 0) {
     numLinesRemoved += numFullLines;
-    score += 10 * numFullLines;
+    score += 10 * numFullLines; // за каждую удаленную линию +10 очков
     emit linesRemovedChanged(numLinesRemoved);
     emit scoreChanged(score);
 
@@ -262,6 +262,8 @@ bool TetrixBoard::tryMove(const TetrixPiece& newPiece, int newX, int newY) {
 }
 
 void TetrixBoard::drawSquare(QPainter& painter, int x, int y, TetrixShape shape) {
+
+  // палитра фигур в соответвии с TetrixShape
   static const QRgb colorTable[8] = {
       0x000000, 0xCC6666, 0x66CC66, 0x6666CC,
       0xCCCC66, 0xCC66CC, 0x66CCCC, 0xDAAA00
