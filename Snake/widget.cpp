@@ -164,8 +164,8 @@ void Widget::retryGame()
 void Widget::gameOverSlot()
 {
     snake.stopTimer();
-    startBtn->setEnabled(false);
-    stopBtn->setEnabled(true);
+     startBtn->setEnabled(false);
+     stopBtn->setEnabled(true);
 }
 void Widget::pauseGame()
 {
@@ -185,36 +185,36 @@ void Widget::keyPressEvent(QKeyEvent *pe)
 {
     switch (pe->key())
     {
-        case Qt::Key_W:
-            qDebug() << "Press W";
+    case Qt::Key_W:
+        qDebug() << "Press W";
         if(abs(snake.direction() - Up) != 2 && snake.direction() != Up)
         {
             snake.setDirection(Up);
         }
         break;
-        case Qt::Key_A:
-            qDebug() << "Press A";
+    case Qt::Key_A:
+        qDebug() << "Press A";
         if(abs(snake.direction() - Left) != 2 && snake.direction() != Left)
         {
             snake.setDirection(Left);
         }
         break;
-        case Qt::Key_S:
-            qDebug() << "Press S";
+    case Qt::Key_S:
+        qDebug() << "Press S";
         if(abs(snake.direction() - Down) != 2 && snake.direction() != Down)
         {
             snake.setDirection(Down);
         }
         break;
-        case Qt::Key_D:
-            qDebug() << "Press D";
+    case Qt::Key_D:
+        qDebug() << "Press D";
         if(abs(snake.direction() - Right) != 2 && snake.direction() != Right)
         {
             snake.setDirection(Right);
         }
         break;
-        default:
-            break;
+    default:
+        break;
     }
 
 }

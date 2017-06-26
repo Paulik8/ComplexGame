@@ -73,7 +73,7 @@ void Snake::move()
 
         if(tmp.ry() < 0)
         {
-            tmp.setY(tmp.ry() + COLUMN);
+           tmp.setY(tmp.ry() + COLUMN);
         }
 
         Body[i] = tmp;
@@ -122,7 +122,7 @@ void Snake::setStartSize()
 }
 
 void Snake::startTimer()
-{
+{ 
     timer->start();
 }
 
