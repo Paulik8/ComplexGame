@@ -1,28 +1,31 @@
+#ifndef MOVE_H
+#define MOVE_H
 #include <QObject>
 #include <QGraphicsScene>
 
-class Moving : public QObject {
-  Q_OBJECT
+class Moving : public QObject
+{
+    Q_OBJECT
+public:
+    explicit Moving(QGraphicsScene & scene, QGraphicsItem *p1, QGraphicsItem *p2, QGraphicsItem *ball, QObject *parent);
 
- public:
-  explicit Moving(QGraphicsScene& scene, QGraphicsItem* p1, QGraphicsItem* p2, QGraphicsItem* ball, QObject* parent);
+protected:
+    virtual bool eventFilter(QObject *, QEvent *use);
 
- protected:
-  virtual bool eventFilter(QObject*, QEvent* use);
+signals:
+    void goal(int p);
 
-  signals:
-  void goal(int p);
+private slots:
+    void time();
 
- private slots:
-  void time();
+private:
+    qreal calculateP2Shift();
+    QGraphicsScene & Scene;
+    QGraphicsItem *P1, *P2, *Ball;
+    QTimer *Timer;
 
- private:
-  qreal calculateP2Shift();
-  QGraphicsScene& Scene;
-  QGraphicsItem* P1, * P2, * Ball;
-  QTimer* Timer;
-
-  QPointF BallShift;
-  qreal P1Shift;
-  qreal P2Shift;
+    QPointF BallShift;
+    qreal P1Shift;
+    qreal P2Shift;
 };
+#endif

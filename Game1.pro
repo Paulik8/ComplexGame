@@ -34,7 +34,7 @@ SOURCES += \
     main.cpp \
     mainwindow.cpp \
     PingPong/move.cpp \
-    PingPong/PPwindow.cpp
+    PingPong/PingPongwindow.cpp
 
 
 
@@ -44,14 +44,14 @@ HEADERS += \
     Tetris/tetrixwindow.h \
     mainwindow.h \
     PingPong/move.h \
-    PingPong/PPwindow.h \
     Snake/snake.h \
-    Snake/widget.h
+    Snake/widget.h \
+    PingPong/PingPongwindow.h
 
 FORMS += \
     mainwindow.ui \
-    PingPong/PPwindow.ui \
-    Snake/widget.ui
+    Snake/widget.ui \
+    PingPong/PingPongwindow.ui
 
 # install
 target.path = $$[QT_INSTALL_EXAMPLES]/widgets/widgets/tetrix

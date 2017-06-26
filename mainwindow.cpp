@@ -7,7 +7,7 @@
 #include <QString>
 #include "Tetris/tetrixwindow.h"
 #include "Snake/widget.h"
-#include "PingPong/PPwindow.h"
+#include "PingPong/PingPongwindow.h"
 
 MainWindow::MainWindow(QWidget* parent) : QMainWindow(parent), ui(new Ui::MainWindow) {
   ui->setupUi(this);
