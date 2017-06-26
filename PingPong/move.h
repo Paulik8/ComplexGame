@@ -1,30 +1,28 @@
 #include <QObject>
 #include <QGraphicsScene>
-//class QGraphicsItem;
-//class QTimer;
 
-class Moving : public QObject
-{
-    Q_OBJECT
-public:
-    explicit Moving(QGraphicsScene & scene, QGraphicsItem *p1, QGraphicsItem *p2, QGraphicsItem *ball, QObject *parent);
+class Moving : public QObject {
+  Q_OBJECT
 
-protected:
-    virtual bool eventFilter(QObject *, QEvent *use);
+ public:
+  explicit Moving(QGraphicsScene& scene, QGraphicsItem* p1, QGraphicsItem* p2, QGraphicsItem* ball, QObject* parent);
 
-signals:
-    void goal(int p);
+ protected:
+  virtual bool eventFilter(QObject*, QEvent* use);
 
-private slots:
-    void time();
+  signals:
+  void goal(int p);
 
-private:
-    qreal calculateP2Shift();
-    QGraphicsScene & Scene;
-    QGraphicsItem *P1, *P2, *Ball;
-    QTimer *Timer;
+ private slots:
+  void time();
 
-    QPointF BallShift;
-    qreal P1Shift;
-    qreal P2Shift;
+ private:
+  qreal calculateP2Shift();
+  QGraphicsScene& Scene;
+  QGraphicsItem* P1, * P2, * Ball;
+  QTimer* Timer;
+
+  QPointF BallShift;
+  qreal P1Shift;
+  qreal P2Shift;
 };

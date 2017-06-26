@@ -10,46 +10,43 @@
 const int COLUMNS = 15;
 const int ROWS = 15;
 namespace Ui {
-  class Widget;
+class Widget;
 }
 
+class Widget : public QWidget {
+  Q_OBJECT
 
-class Widget : public QWidget
-{
-    Q_OBJECT
+ public:
+  explicit Widget(QWidget* parent = 0);
+  ~Widget();
 
-public:
-    explicit Widget(QWidget *parent = 0);
-    ~Widget();
+ private:
+  Ui::Widget* ui;
+ private:
+  QTableWidget* field;
+  QPushButton* startBtn;
+  QPushButton* stopBtn;
+  QPushButton* pauseBtn;
+  QLCDNumber* counter;
 
-private:
-    Ui::Widget *ui;
-private:
-    QTableWidget* field;
-    QPushButton* startBtn;
-    QPushButton* stopBtn;
-    QPushButton* pauseBtn;
-    QLCDNumber* counter;
+ private:
+  void generateFood();
+ private:
+  Snake snake;
+  QPoint food;
+  int countFood;
+ public slots:
+  void drawSnakeSlot(QVector<QPoint> prev, QVector <QPoint> next);
+  void startGame();
+  void retryGame();
+  void gameOverSlot();
+  void pauseGame();
 
+  signals:
+  void gameOver();
 
-private:
-    void generateFood();
-private:
-    Snake snake;
-    QPoint food;
-    int countFood;
-public slots:
-    void drawSnakeSlot(QVector<QPoint> prev, QVector<QPoint> next);
-    void startGame();
-    void retryGame();
-    void gameOverSlot();
-    void pauseGame();
-signals:
-    void gameOver();
-
-protected:
-   virtual void keyPressEvent(QKeyEvent* pe);
-
+ protected:
+  virtual void keyPressEvent(QKeyEvent* pe);
 };
 
 #endif // WIDGET_H
