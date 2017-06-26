@@ -23,8 +23,6 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_action_4_triggered()
 {
-
-
     QMessageBox msgBox;
     msgBox.setWindowTitle("Справка");
     msgBox.setText("Приветствуем Вас в игре \"ТехноТет\"и желаем приятных впечатлений\n\n"\
@@ -37,7 +35,6 @@ void MainWindow::on_action_4_triggered()
                    "Управление: стрелки клавиатуры\n\n"\
                   );
     msgBox.exec();
-
 }
 
 void MainWindow::on_Exit_clicked()

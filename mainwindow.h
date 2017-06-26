@@ -20,17 +20,17 @@ public:
 
 private slots:
 
-    void on_action_4_triggered();
+    void on_action_4_triggered();            //справка
 
     void on_Exit_clicked();
 
-    void on_action_3_triggered();
+    void on_action_3_triggered();            //о программе
 
-    void on_Game1_clicked();
+    void on_Game1_clicked();                 //открытие нового окна с игрой "Тетрис"
 
-    void on_Game3_clicked();
+    void on_Game3_clicked();                 //открытие окна с игрой "Змейка"
 
-    void on_Game4_clicked();
+    void on_Game4_clicked();                 //открытие окна с игрой "Пинг-понг"
 
 private:
     Ui::MainWindow *ui;
